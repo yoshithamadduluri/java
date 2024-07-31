@@ -1,0 +1,32 @@
+class Rectangle {
+    int length;
+    int breadth;
+
+    Rectangle(int length, int breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    int area() {
+        return length * breadth;
+    }
+}
+
+class AreaCalculator {
+    Rectangle createRectangle(int length, int breadth) {
+        return new Rectangle(length, breadth);
+    }
+
+    int calculateArea(Rectangle rect) {
+        return rect.area();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        AreaCalculator calculator = new AreaCalculator();
+        Rectangle myRectangle = calculator.createRectangle(5, 7);
+        int area = calculator.calculateArea(myRectangle);
+        System.out.println("Area of the rectangle: " + area);
+    }
+}
